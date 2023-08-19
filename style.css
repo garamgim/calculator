@@ -66,12 +66,24 @@ button:active {
 
 @media (max-width: 550px) or (max-height: 600px) {
 
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px 20px;
+        height: 80vh;
+        width: 50vw;
+        padding: 30px;
+        background-color: #A8DF8E;
+        border-radius: 10px;
+        box-shadow: 3px 3px 5px grey;
+    }
+
     div#equation {
-        font-size: 30px;
+        font-size: 16px;
     }
 
     div#solution {
-        font-size: 35px;
+        font-size: 25px;
     }
 
     button {
