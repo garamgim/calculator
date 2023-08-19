@@ -86,8 +86,8 @@ acButton.addEventListener('click', () => {
 /* Del Button */
 const delButton = document.getElementById('del');
 delButton.addEventListener('click', () => {
-    equationArray = pop();
-
+    number = number.slice(0, -1);
+    solution.innerHTML = number;
 });
 
 /* . Button */
