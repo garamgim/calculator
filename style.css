@@ -83,11 +83,12 @@ button:active {
     }
 
     div#solution {
-        font-size: 25px;
+        font-size: 23px;
     }
 
     button {
         font-size: 15px;
+        height: 30px
     }
 
 }
