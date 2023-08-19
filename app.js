@@ -1,6 +1,9 @@
 
 
 function operate(operator, num1, num2) {
+
+    if (num2 === 0) { return 'ERROR'; }
+
     switch (operator) {
         case '+':
             return num1 + num2;
@@ -15,6 +18,7 @@ function operate(operator, num1, num2) {
         default:
             return 'ERROR'
     }
+
 }
 
 let equation = document.getElementById('equation');
@@ -65,22 +69,42 @@ resultButton.addEventListener('click', () => {
     solutionValue = operate(equationArray[1], equationArray[0], equationArray[2]);
 
     equation.innerHTML = equation.innerHTML = equationArray.join(' ');
-    solution.innerHTML = solutionValue;
-    number = ''
+    solution.innerHTML = Math.ceil(solutionValue * 1000000000) / 1000000000;
+    number = '';
 });
 
 /* AC Button */
 const acButton = document.getElementById('ac');
 acButton.addEventListener('click', () => {
-    currentEquationValue = [];
-    equationValue = '';
-    equation.innerHTML = equationValue;
+    equationArray = [];
+    number = '';
+    solutionValue = 0;
+    equation.innerHTML = '';
     solution.innerHTML = '';
 });
 
 /* Del Button */
 const delButton = document.getElementById('del');
 delButton.addEventListener('click', () => {
-    equationValue = equationValue.slice(0, -1);
-    equation.innerHTML = equationValue;
+    equationArray = pop();
+
+});
+
+/* . Button */
+const dotButton = document.getElementById('dot');
+dotButton.addEventListener('click', (e) => {
+    number += e.target.textContent;
+    solution.innerHTML = number;
+});
+
+/* Sign Button */
+const signButton = document.getElementById('sign');
+signButton.addEventListener('click', () => {
+    if (number[0] !== '-') {
+        number = '-' + number;
+        solution.innerHTML = number;
+    } else {
+        number = number.slice(1);
+        solution.innerHTML = number;
+    }
 });
