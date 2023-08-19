@@ -93,7 +93,7 @@ resultButton.addEventListener('click', () => {
         solutionValue = operate(equationArray[1], equationArray[0], equationArray[2]);
 
         equation.innerHTML = equation.innerHTML = equationArray.join(' ');
-        solution.innerHTML = Math.ceil(solutionValue * 1000000000000000) / 1000000000000000;
+        solution.innerHTML = Math.ceil(solutionValue * 10000000000000) / 10000000000000;
         number = solutionValue;
     }
 

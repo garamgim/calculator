@@ -20,8 +20,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px 20px;
-    height: 80vh;
-    width: 50vw;
+    height: 500px;
+    width: 600px;
     padding: 30px;
     background-color: #A8DF8E;
     border-radius: 10px;
@@ -70,8 +70,8 @@ button:active {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 10px 20px;
-        height: 80vh;
-        width: 50vw;
+        height: 300px;
+        width: 200px;
         padding: 30px;
         background-color: #A8DF8E;
         border-radius: 10px;
