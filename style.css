@@ -70,7 +70,7 @@ button:active {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 10px 20px;
-        height: 300px;
+        height: 330px;
         width: 200px;
         padding: 30px;
         background-color: #A8DF8E;

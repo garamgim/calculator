@@ -54,6 +54,7 @@ numButtons.forEach(button => {
     });
 });
 
+
 const operatorButtons = document.querySelectorAll('button.operator');
 
 operatorButtons.forEach(button => {
@@ -61,13 +62,26 @@ operatorButtons.forEach(button => {
 
         if (number !== '') {
 
-            if (solutionValue === 0) {
+            if (solutionValue === 0 && equationArray.length !== 2) {
+
                 equationArray.push(Number(number));
                 equationArray.push(e.target.textContent);
-            } else {
+
+            } else if (equationArray.length === 2) {
+
+                equationArray.push(Number(number));
+                solutionValue = operate(equationArray[1], equationArray[0], equationArray[2]);
+
                 equationArray = [];
                 equationArray.push(solutionValue);
                 equationArray.push(e.target.textContent);
+
+            } else {
+
+                equationArray = [];
+                equationArray.push(solutionValue);
+                equationArray.push(e.target.textContent);
+
             }
 
             equation.innerHTML = equationArray.join(' ');
@@ -92,8 +106,8 @@ resultButton.addEventListener('click', () => {
 
         solutionValue = operate(equationArray[1], equationArray[0], equationArray[2]);
 
-        equation.innerHTML = equation.innerHTML = equationArray.join(' ');
-        solution.innerHTML = Math.ceil(solutionValue * 10000000000000) / 10000000000000;
+        equation.innerHTML = equationArray.join(' ');
+        solution.innerHTML = Math.ceil(solutionValue * 100000000000) / 100000000000;
         number = solutionValue;
     }
 
