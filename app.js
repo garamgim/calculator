@@ -2,7 +2,6 @@
 
 function operate(operator, num1, num2) {
 
-    if (num2 === 0) { return 'ERROR'; }
 
     switch (operator) {
         case '+':
@@ -12,9 +11,11 @@ function operate(operator, num1, num2) {
         case '*':
             return num1 * num2;
         case '÷':
-            return num1 / num2;
+            if (num2 === 0) { return 'ERROR'; }
+            else return num1 / num2;
         case '%':
-            return num1 % num2;
+            if (num2 === 0) { return 'ERROR'; }
+            else return num1 % num2;
         default:
             return 'ERROR'
     }
@@ -34,7 +35,7 @@ let solution = document.getElementById('solution');
 
 let number = '';
 let equationArray = [];
-let solutionValue = 0;
+let solutionValue = "empty";
 
 
 
@@ -62,8 +63,10 @@ operatorButtons.forEach(button => {
 
         if (number !== '') {
 
-            if (solutionValue === 0 && equationArray.length !== 2) {
+            if (solutionValue === "empty" && equationArray.length !== 2) {
 
+                console.log(number);
+                console.log(Number(number));
                 equationArray.push(Number(number));
                 equationArray.push(e.target.textContent);
 
@@ -122,7 +125,7 @@ const acButton = document.getElementById('ac');
 acButton.addEventListener('click', () => {
     equationArray = [];
     number = '';
-    solutionValue = 0;
+    solutionValue = "empty";
     equation.innerHTML = '';
     solution.innerHTML = '';
 });
