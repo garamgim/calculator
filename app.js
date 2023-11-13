@@ -39,11 +39,6 @@ let solutionValue = "empty";
 
 
 
-
-
-/* BUTTON FUNCTIONS */
-
-
 /* Making an equation and make it displayed */
 
 const numButtons = document.querySelectorAll('button.num');
@@ -118,7 +113,6 @@ resultButton.addEventListener('click', () => {
 
 
 
-
 /* AC Button */
 
 const acButton = document.getElementById('ac');
@@ -132,7 +126,6 @@ acButton.addEventListener('click', () => {
 
 
 
-
 /* Del Button */
 
 const delButton = document.getElementById('del');
@@ -140,7 +133,6 @@ delButton.addEventListener('click', () => {
     number = number.slice(0, -1);
     solution.innerHTML = number;
 });
-
 
 
 
@@ -153,7 +145,6 @@ dotButton.addEventListener('click', (e) => {
         solution.innerHTML = number;
     }
 });
-
 
 
 
